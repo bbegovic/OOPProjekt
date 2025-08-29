@@ -1,0 +1,52 @@
+﻿<Window x:Class="WorldCup.WpfApp.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Postavke aplikacije"
+        Height="300" Width="400"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        
+        <StackPanel Grid.Row="0" Margin="0,0,0,15">
+            <TextBlock Text="Odaberi jezik:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <ComboBox x:Name="cmbLanguage" Width="200">
+                <ComboBoxItem Content="Hrvatski"/>
+                <ComboBoxItem Content="English"/>
+            </ComboBox>
+        </StackPanel>
+
+        
+        <StackPanel Grid.Row="1" Margin="0,0,0,15">
+            <TextBlock Text="Odaberi prvenstvo:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <ComboBox x:Name="cmbTournament" Width="200">
+                <ComboBoxItem Content="WorldCupMen"/>
+                <ComboBoxItem Content="WorldCupWomen"/>
+            </ComboBox>
+        </StackPanel>
+
+        
+        <StackPanel Grid.Row="2" Margin="0,0,0,15">
+            <TextBlock Text="Način prikaza:" FontWeight="Bold" Margin="0,0,0,5"/>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="rbFullscreen" Content="Fullscreen" Margin="0,0,15,0"/>
+                <RadioButton x:Name="rb1280" Content="1280x720" Margin="0,0,15,0"/>
+                <RadioButton x:Name="rb1600" Content="1600x900"/>
+            </StackPanel>
+        </StackPanel>
+
+        
+        <StackPanel Grid.Row="3" Orientation="Horizontal" 
+                    HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Content="Potvrdi" Width="100" Margin="0,0,10,0" Click="BtnConfirm_Click"/>
+            <Button Content="Odustani" Width="100" Click="BtnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

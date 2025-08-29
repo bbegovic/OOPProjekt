@@ -1,0 +1,42 @@
+﻿<Window x:Class="WorldCup.WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="World Cup WPF" Height="500" Width="700"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,15">
+            <StackPanel Margin="0,0,20,0">
+                <TextBlock Text="Tvoja reprezentacija:" FontWeight="Bold"/>
+                <ComboBox x:Name="cmbHomeTeam" Width="250" SelectionChanged="CmbHomeTeam_SelectionChanged"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Text="Protivnik:" FontWeight="Bold"/>
+                <ComboBox x:Name="cmbAwayTeam" Width="250" SelectionChanged="CmbAwayTeam_SelectionChanged"/>
+            </StackPanel>
+        </StackPanel>
+
+        <TextBlock x:Name="txtResult" Grid.Row="1" 
+                   FontSize="20" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,15"/>
+
+        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,15">
+            <Button x:Name="btnHomeInfo" Content="Info (Home)" Width="120" Margin="10,0" Click="BtnHomeInfo_Click"/>
+            <Button x:Name="btnAwayInfo" Content="Info (Away)" Width="120" Margin="10,0" Click="BtnAwayInfo_Click"/>
+        </StackPanel>
+
+      
+        <StatusBar Grid.Row="3" VerticalAlignment="Bottom">
+            <StatusBarItem Content="World Cup App - WPF"/>
+        </StatusBar>
+    </Grid>
+</Window>
